@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    .pagina {
+      display: flex;
+      height: 100%;
+    }
+
+    .links {
+      flex: 1;
+      position: relative;
+    }
+
+    .links img {
+      height: 295%;
+      background-position: center;
+      object-fit: cover;
+      
+    }
+
+    .rechts {
+      flex: 1;
+      padding: 20px;
+    }
+
+
+  </style>  
+
+  <body style="background-color: #15162b;">
+    <div class="pagina">
+      <div class="links">
+          <img src="png/image1.jpg" alt="Image" id="slideshow">
+      </div>
+      <div class="rechts">
+          <h1 style="font-size: 40px; color: #fff; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">AI Grillll (WIP)</h1>
+      </div>
+  </div>
+  </body>
+
+  <script>
+    function fetchImages() {
+    let images = [];
+
+    for (let i = 1; i <= 10; i++) {
+        images.push(`png/image${i}.png`);
+    }
+
+    return images;
+    }
+
+    function chooseRandomImage(images) {
+    return images[Math.floor(Math.random() * images.length)];
+    }
+
+    function setRandomImage() {
+    const images = fetchImages();
+    const randomImage = chooseRandomImage(images);
+    document.getElementById("slideshow").src = randomImage;
+    }
+
+    setRandomImage();
+
+    setInterval(setRandomImage, 1000);
+  </script>
+</html>
