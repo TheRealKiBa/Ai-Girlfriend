@@ -1,58 +1,57 @@
 <!DOCTYPE html>
 <html>
+<head>
   <style>
     .pagina {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      background-color: #15162b;
     }
 
     .links img {
       height: 295%;
       background-position: center;
       object-fit: cover;
-      
     }
-
-
   </style>  
-
   <title> GEEF GELD!!! :P</title>
-  <body style="background-color: #15162b; background-image: url(https://github.com/TheRealKiBa/Ai-Girlfriend/blob/main/AI%20Grilllfriend/png/image1.png?raw=true);" id="slideshow">
-    <div class="pagina">
-      <div class="titel">
-          <h1 style="font-size: 40px; color: #fff; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">AI Grillll (WIP)</h1>
-      </div>      
-      <div class="links">
-      </div>
+</head>
+<body id="slideshow">
+  <div class="pagina">
+    <div class="titel">
+      <h1 style="font-size: 40px; color: #fff; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">AI Grillll (WIP)</h1>
+    </div>      
+    <div class="links">
+    </div>
   </div>
-  </body>
 
   <script>
     function fetchImages() {
-    let images = [];
+      let images = [];
 
-    for (let i = 1; i <= 10; i++) {
-        images.push(`https://github.com/TheRealKiBa/Ai-Girlfriend/blob/main/AI%20Grilllfriend/png/image${i}.png?raw=true`);
-    }
+      for (let i = 1; i <= 10; i++) {
+          images.push(`https://github.com/TheRealKiBa/Ai-Girlfriend/blob/main/AI%20Grilllfriend/png/image${i}.png?raw=true`);
+      }
 
-    return images;
+      return images;
     }
 
     function chooseRandomImage(images) {
-    return images[Math.floor(Math.random() * images.length)];
+      return images[Math.floor(Math.random() * images.length)];
     }
 
     function setRandomImage() {
-    const images = fetchImages();
-    const randomImage = chooseRandomImage(images);
-    document.getElementById("slideshow").src = randomImage;
+      const images = fetchImages();
+      const randomImage = chooseRandomImage(images);
+      document.getElementById("slideshow").style.backgroundImage = `url(${randomImage})`;
     }
 
     setRandomImage();
 
-    setInterval(setRandomImage, 1000);
+    setInterval(setRandomImage, 3000); // Change the time interval to your desired duration in milliseconds
   </script>
+</body>
 </html>
